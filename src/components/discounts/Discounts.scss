@@ -1,0 +1,208 @@
+.contaiener_discounts {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 1110px;
+    margin: 0 auto;
+    background: #F9F6F1;
+}
+
+.discounts_slider_wraper {
+    margin-top: 126px;
+    display: flex;
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+}
+
+.discounts_slider_description {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    @media (min-width: 481px) and (max-width: 991px) {
+        margin-left: 10px;
+    }
+
+    @media (max-width: 480px) {
+        margin-left: 10px;
+    }
+}
+
+.slider_description_title {
+    margin-top: 34px;
+    font-size: 30px;
+    color: #000000;
+    font-weight: 400;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 25px;
+        font-size: 26px;
+    }
+
+    @media (max-width: 480px) {
+        margin-left: 10px;
+    }
+
+}
+
+.slider_description_text {
+    text-transform: uppercase;
+    margin-top: 35px;
+    font-size: 55px;
+    color: #000000;
+    font-weight: 700;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 30px;
+        font-size: 48px;
+    }
+
+    @media (max-width: 480px) {
+        margin-left: 10px;
+    }
+
+}
+
+.slider_description_btn {
+    text-transform: uppercase;
+    background: #D7B399;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 240px;
+    height: 55px;
+    border: none;
+    margin-top: 55px;
+    text-decoration: double;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 220px;
+        margin-top: 45px;
+    }
+}
+
+.discounts_slider_item {
+    position: relative;
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        margin-top: 15px;
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 15px;
+    }
+
+}
+
+.discounts_slider_item img {
+    object-fit: contain;
+    width: 576px;
+    height: 377px;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 526px;
+        height: 377px;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        width: 446px;
+        height: 317px;
+    }
+
+    @media (max-width: 480px) {
+        width: 316px;
+        height: 227px;
+    }
+
+}
+
+.discounts_slider_img {
+    object-fit: cover;
+    background: #F9F6F1;
+}
+
+.slider_item_price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 481px) and (max-width: 991px) {
+        right: 20px;
+    }
+
+    @media (max-width: 480px) {
+        right: 20px;
+    }
+}
+
+.slider_item_old_price {
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-decoration-line: line-through;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: right;
+
+    @media (max-width: 480px) {
+        margin-top: 20px;
+    }
+
+}
+
+.slider_item_discount_price {
+    margin-top: 14px;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 51px;
+    text-transform: uppercase;
+    color: #D84033;
+
+    @media (min-width: 481px) and (max-width: 991px) {
+        font-size: 36px;
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 5px;
+        font-size: 32px;
+    }
+}
+
+.discounts_slider_btn {
+    margin: 130px auto 120px auto;
+
+    @media (min-width: 481px) and (max-width: 991px) {
+        margin: 90px auto;
+    }
+
+    @media (max-width: 480px) {
+        margin: 70px auto;
+    }
+}
+
+.slider_btn {
+    width: 40px;
+    height: 7px;
+    background: #D7B399;
+    border: none;
+    margin: 0 7px;
+
+    @media (min-width: 481px) and (max-width: 991px) {
+        margin: 0 15px;
+    }
+
+    @media (max-width: 480px) {
+        margin: 0 15px;
+    }
+}

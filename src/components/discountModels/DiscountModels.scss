@@ -1,0 +1,75 @@
+.contaiener_discounts_models {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1110px;
+    margin: 0 auto;
+    background: #F9F6F1;
+    padding: 20px 10px;
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.discounts_models_item {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+
+.discounts_models_img {
+    object-fit: contain;
+    width: 500px;
+    height: 270px;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 374px;
+        height: 307px;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        width: 434px;
+        height: 347px;
+    }
+
+    @media (max-width: 480px) {
+        width: 316px;
+        height: 227px;
+    }
+}
+
+.discounts_models_btn {
+    text-transform: uppercase;
+    background: #D7B399;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 240px;
+    height: 55px;
+    border: none;
+    margin-top: 55px;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 220px;
+        margin-top: 45px;
+    }
+}

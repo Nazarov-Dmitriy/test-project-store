@@ -1,0 +1,140 @@
+.container_product {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 1110px;
+    margin: 0 auto;
+    background: #F9F6F1;
+}
+
+.collections {
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.collection {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 0 18px;
+
+    @media (max-width: 480px) {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+.collection_title {
+    margin-top: 60px;
+    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+}
+
+.collection_text {
+    font-weight: 300;
+    font-size: 16px;
+    color: #000000;
+    margin-top: 25px;
+}
+
+.collection_btn {
+    margin-top: 40px;
+    width: 80px;
+    height: 30px;
+    background: #D7B399;
+    border: none
+}
+
+.collection_btn img {
+    width: 20px;
+}
+
+.collection_img {
+    margin-top: 79px;
+    width: 190px;
+    height: 171px;
+    object-fit: contain;
+
+    @media (max-width: 480px) {
+        width: 150px;
+    }
+}
+
+.cart_list {
+    width: 1110px;
+    min-height: 236px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    margin: 15px auto 0 auto;
+
+    @media (min-width: 768px) and (max-width: 1109px) {
+        width: 750px;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        width: 500px;
+    }
+
+    @media (max-width: 480px) {
+        width: 280px;
+    }
+}
+
+.cart_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart_title {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 21px;
+    color: #000000;
+}
+
+.cart_item_img {
+    object-fit: contain;
+    width: 277px;
+    height: 236px;
+
+    @media (min-width: 768px) and (max-width: 1109px) {
+        width: 250px;
+        height: 216px;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        width: 250px;
+        height: 215px;
+    }
+}
+
+.cart_item_btn{
+    text-transform: uppercase;
+    background: #D7B399;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 160px;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 55px;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 35px;
+        
+    }
+}
