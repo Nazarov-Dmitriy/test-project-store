@@ -89,6 +89,12 @@
     }
 }
 
+.slider_description_btn:hover {
+    border: 1px solid #9b7356;
+    background-color: #9b7356;
+    color: #fff;
+}
+
 .discounts_slider_item {
     position: relative;
 
@@ -205,4 +211,8 @@
     @media (max-width: 480px) {
         margin: 0 15px;
     }
+}
+
+.slider_btn_active {
+    background: #9b7356;
 }

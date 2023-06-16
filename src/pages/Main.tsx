@@ -1,3 +1,4 @@
+import React from "react";
 import Discounts from "../components/discounts/Discounts";
 import FreeShipping from "../components/free shipping/FreeShipping";
 import Product from "../components/product/Product";

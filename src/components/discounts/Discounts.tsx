@@ -3,12 +3,15 @@ import { useGetDiscountQuery } from "../../features/shopApi";
 import "./Discounts.scss";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import React from "react";
+import IProduct from "src/models/IProduct";
 
 function Discounts() {
   const { data } = useGetDiscountQuery("");
-  const [url, setUrl] = useState("");
-  const [price, setPrice] = useState("");
-  const [newPrice, setNewPrice] = useState("");
+  const [url, setUrl] = useState<string>("");
+  const [price, setPrice] = useState<number>();
+  const [newPrice, setNewPrice] = useState<number | null>();
+  const [btnActive, settnActive] = useState<number>(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,7 +22,7 @@ function Discounts() {
     }
   }, [data]);
 
-  function numberWithSpaces(x: string) {
+  function numberWithSpaces(x: number) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
@@ -27,12 +30,15 @@ function Discounts() {
     navigate(`/discounts`);
   }
 
-  function slider(index: any) {
-    setUrl(
-      process.env.REACT_APP_URL_SERVER + "public/images/" + data[index].url
-    );
-    setPrice(data[index].price);
-    setNewPrice(data[index].price_discount);
+  function slider(index: number) {
+    if (data) {
+      setUrl(
+        process.env.REACT_APP_URL_SERVER + "public/images/" + data[index].url
+      );
+      setPrice(data[index].price);
+      setNewPrice(data[index].price_discount);
+      settnActive(index);
+    }
   }
 
   return (
@@ -52,10 +58,10 @@ function Discounts() {
           <img className="discounts_slider_img" src={url} alt="item_img" />
           <div className="slider_item_price">
             <span className="slider_item_old_price">
-              {numberWithSpaces(price)} ₽
+              {price && numberWithSpaces(price)} ₽
             </span>
             <span className="slider_item_discount_price">
-              {numberWithSpaces(newPrice)} ₽
+              {newPrice && numberWithSpaces(newPrice)} ₽
             </span>
           </div>
         </div>
@@ -63,10 +69,14 @@ function Discounts() {
       <div className="discounts_slider_btn">
         {data &&
           data.length > 0 &&
-          data?.map((item: any, index: any) => (
+          data?.map((item: IProduct, index: any) => (
             <button
               key={uuidv4()}
-              className="slider_btn"
+              className={
+                btnActive === index
+                  ? "slider_btn slider_btn_active"
+                  : "slider_btn"
+              }
               onClick={() => slider(index)}
             ></button>
           ))}

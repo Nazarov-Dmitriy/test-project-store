@@ -1,3 +1,4 @@
+import React from "react";
 import "./Footer.scss";
 import logo from "../../assets/icons/logo.svg";
 import vk from "../../assets/icons/icons-vk.svg";

@@ -2,11 +2,8 @@ import {
   createApi
 } from "@reduxjs/toolkit/query/react";
 import { baseQueryWithReauth } from "../app/CustomFetchBase";
-
-export interface AddHotelRequest {
-  title: string;
-  description: string;
-}
+import IProduct from "src/models/IProduct";
+import IProducts from "src/models/IProducts";
 
 
 export const shopApi = createApi({
@@ -14,7 +11,7 @@ export const shopApi = createApi({
   baseQuery: baseQueryWithReauth,
   endpoints: (builder) => ({
 
-    getDiscount: builder.query({
+    getDiscount: builder.query<IProduct[], string | undefined>({
       query() {
         return {
           url: `shop/discount`,
@@ -22,16 +19,17 @@ export const shopApi = createApi({
       },
     }),
 
-    getCollection: builder.query({
+    getCollection: builder.query<IProducts, string | undefined>({
       query() {
         return {
           url: `shop/collection`,
         }
       },
+
     }),
 
-    getProduct: builder.query({
-      query(id) {
+    getProduct: builder.query<IProduct, string | undefined>({
+      query(id: string | undefined) {
         return {
           url: `shop/product/${id}`,
         }

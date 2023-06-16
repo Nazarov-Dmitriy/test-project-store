@@ -19,14 +19,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "baseUrl": "./",
     "paths": {
       "src/*": ["src/*", "webpack.config.ts"]
     }
   },
   "include": [
-    "src"
+    "src/**/*" // *** The files TypeScript should type check ***
   ],
   "exclude": ["./dist"]
 }

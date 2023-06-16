@@ -1,14 +1,28 @@
+import React from "react";
 import { useGetCollectionQuery } from "../../features/shopApi";
 import "./Product.scss";
-import arrow from '../../assets/icons/arrow.svg'
+import arrow from "../../assets/icons/arrow.svg";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import IProducts from "src/models/IProducts";
 
 function Product() {
   const { data } = useGetCollectionQuery("");
+  const [dataArray, setDataArray] = useState<IProducts>();
   const navigate = useNavigate();
 
-  function navigatePage(id: string) {
+  useEffect(() => {
+    if (data) {
+      setDataArray(data);
+    }
+  }, [data]);
+
+  function navigatePage(id: string): void {
     navigate(`/product-cart/${id}`);
+  }
+
+  function navigatePageDevelopments(): void {
+    navigate(`/page-in-development`);
   }
 
   return (
@@ -18,8 +32,11 @@ function Product() {
           <div className="collection_description">
             <p className="collection_title">МУЖСКАЯ КОЛЛЕКЦИЯ</p>
             <p className="collection_text">Обувь, полуверы, костюмы</p>
-            <button className="collection_btn">
-              <img src={arrow} alt="arrow"/>
+            <button
+              className="collection_btn"
+              onClick={() => navigatePageDevelopments()}
+            >
+              <img src={arrow} alt="arrow" />
             </button>
           </div>
           <img
@@ -32,8 +49,11 @@ function Product() {
           <div className="collection_description">
             <p className="collection_title">ЖЕНСКАЯ КОЛЛЕКЦИЯ</p>
             <p className="collection_text">Обувь, полуверы, костюмы</p>
-            <button className="collection_btn">
-              <img src={arrow} alt="arrow"/>
+            <button
+              className="collection_btn"
+              onClick={() => navigatePageDevelopments()}
+            >
+              <img src={arrow} alt="arrow" />
             </button>
           </div>
           <img
@@ -44,9 +64,9 @@ function Product() {
         </div>
       </div>
       <div className="cart_list">
-        {data &&
-          data.man.length > 0 &&
-          data?.man?.map((item: any) => (
+        {dataArray &&
+          dataArray.man.length > 0 &&
+          dataArray?.man?.map((item: any) => (
             <div className="cart_item" key={item.id}>
               <p className="cart_title"> {item.title} </p>
               <img
@@ -56,15 +76,18 @@ function Product() {
                 }
                 alt="cart..."
               />
-              <button className="cart_item_btn" onClick={() => navigatePage(item.id)}>
+              <button
+                className="cart_item_btn"
+                onClick={() => navigatePage(item.id)}
+              >
                 Посмотреть
               </button>
             </div>
           ))}
 
-        {data &&
-          data.woman.length > 0 &&
-          data?.woman?.map((item: any) => (
+        {dataArray &&
+          dataArray.woman.length > 0 &&
+          dataArray?.woman?.map((item: any) => (
             <div className="cart_item" key={item.id}>
               <p className="cart_title"> {item.title} </p>
               <img

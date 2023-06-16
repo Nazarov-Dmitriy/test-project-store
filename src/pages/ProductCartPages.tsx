@@ -1,3 +1,4 @@
+import React from "react";
 import ProductCart from "../components/productCart/ProductCart";
 
 function ProductCartPages() {

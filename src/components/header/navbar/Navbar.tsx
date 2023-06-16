@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Navbar.scss";
 import polygon from "../../../assets/icons/polygon.svg";
 import logo from "../../../assets/icons/logo.svg";

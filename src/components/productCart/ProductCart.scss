@@ -62,56 +62,34 @@
     padding: 10px;
 }
 
-.product_card_prices {
+
+.card_prices {
     display: flex;
-    margin-bottom: 10px;
+    margin-top: 10px;
     justify-content: space-between;
-    align-items: center;
 }
 
-.product_card_price::after {
-    content: "₽";
-    margin-left: 5px;
-    position: relative;
+.card_prices_end {
+    align-self: flex-end
 }
 
-.product_card_price--discount {
+.card_price_discount {
     font-weight: 700;
-    font-size: 19px;
+    font-size: 16px;
     color: #414141;
-    display: flex;
-    flex-wrap: wrap-reverse;
 }
 
-.product_card_price {
-    display: flex;
-}
 
-.product_card_price--discount::before {
-    content: "Со скидкой";
-    font-weight: 400;
-    font-size: 13px;
-    color: #bfbfbf;
-    margin-right: 5px;
-}
-
-.product_card_price--common {
+.card_price_common {
     font-weight: 400;
     font-size: 17px;
     color: #606060;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: flex-end;
 }
 
-.product_card_price--common::before {
-    content: "Цена";
-    font-weight: 400;
-    font-size: 13px;
-    color: #bfbfbf;
-    margin-right: 5px;
+.card_price_common_line-through {
+    text-decoration: line-through;
+    text-decoration-color: #ff6633;
 }
-
 
 
 .product_card_add {
@@ -120,18 +98,19 @@
     width: 50%;
     font-weight: 400;
     font-size: 17px;
-    color: #70c05b;
+    color: black;
     padding: 10px;
     text-align: center;
-    border: 1px solid #F9F6F1;
+    border: 1px solid #D7B399;
     border-radius: 4px;
     cursor: pointer;
     transition: 0.2s;
     margin-top: auto;
+    background: #D7B399;
 }
 
 .product_card_add:hover {
-    border: 1px solid #ff6633;
-    background-color: #ff6633;
+    border: 1px solid #9b7356;
+    background-color: #9b7356;
     color: #fff;
 }

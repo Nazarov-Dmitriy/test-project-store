@@ -1,3 +1,4 @@
+import React from "react";
 import DiscountModels from "../components/discountModels/DiscountModels";
 
 function DiscountsPages() {
